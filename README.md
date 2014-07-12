@@ -1,7 +1,7 @@
 GDownloader
 ===========
 
-A **G**TK+ **D**ownloader supporting plugins. (Just like JDownloader for instance).
+A <strong>G</strong>TK+ <strong>D</strong>ownloader supporting plugins. (Just like JDownloader for instance).
 
 Currently in Development (not usable).
 
