@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="GDownloaderPreferences" parent="GtkWindow">
+        <property name="modal">True</property>
+        <property name="destroy_with_parent">True</property>
+        <property name="type_hint">dialog</property>
+        <property name="border_width">0</property>
+        <child type="titlebar">
+            <object class="GtkHeaderBar" id="header_bar">
+                <property name="title" translatable="yes">Preferences</property>
+                <property name="show-close-button">True</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox" id="outer_vbox">
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="GtkNotebook" id="main_note">
+                        <child>
+                            <object class="GtkBox" id="iface_tab">
+                            
+                            </object>
+                        </child>
+                        <child type="tab">
+                            <object class="GtkLabel" id="iface_tab_label">
+                                <property name="label" translatable="yes">Interface</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkBox" id="network_tab">
+                            
+                            </object>
+                        </child>
+                        <child type="tab">
+                            <object class="GtkLabel" id="network_tab_lbl">
+                                <property name="label" translatable="yes">Network</property>
+                            </object>
+                        </child> 
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>
