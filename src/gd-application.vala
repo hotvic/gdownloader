@@ -1,5 +1,5 @@
 /*
- * This file is part of PDownloader.
+ * This file is part of GDownloader.
  *
  * Copyright (C) 2014 Victor A. Santos <victoraur.santos@gmail.com>
  *
@@ -23,10 +23,12 @@ namespace GDownloader
 
     public class Application : Gtk.Application
     {
-        
         /* Plugin Engines */
         public Plugins.CoreEngine core;
         public Plugins.HosterEngine hoster;
+
+        /* Preferences window instance */
+        public Preferences prefs_instance;
 
         public static const ActionEntry[] app_entries = {
             { "preferences",    on_preferences_activated    },
@@ -64,15 +66,16 @@ namespace GDownloader
 
             if (GDownloader.Utils.show_appmenu()) {
                 app_menu = builder.get_object("appmenu") as MenuModel;
-            } 
+            }
+
+            /* Initialize Pereferences window */
+            prefs_instance = Preferences.get_default(this);
         }
 
         private void on_preferences_activated()
         {
-            var preferences = new Preferences(this);
-
-            preferences.show_all();
-            preferences.present();
+            prefs_instance.show_all();
+            prefs_instance.present();
         }
 
         private void on_quit_activated()
