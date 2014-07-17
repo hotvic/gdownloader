@@ -21,8 +21,11 @@
 namespace GDownloader {
 
     [GtkTemplate ( ui = "/org/gdownloader/ui/preferences.ui" )]
-    public class Preferences : Gtk.Window
+    public class PreferencesWindow : Gtk.Window
     {
+        /* Instance */
+        public static PreferencesWindow s_instance;
+
         public PeasGtk.PluginManager core_manager;
         public PeasGtk.PluginManager hoster_manager;
 
@@ -30,9 +33,12 @@ namespace GDownloader {
         [GtkChild]
         private Gtk.Notebook main_note;
 
-        public Preferences(Application app)
+        public PreferencesWindow(Application app)
         {
             set_transient_for(app.active_window);
+
+            // hide on close instead of destroy
+            delete_event.connect(hide_on_delete);
 
             // Append plugins managers
             core_manager = new PeasGtk.PluginManager(app.core);
@@ -43,6 +49,14 @@ namespace GDownloader {
 
             main_note.append_page(core_manager, core_lbl);
             main_note.append_page(hoster_manager, hoster_lbl);
+        }
+
+        public static unowned PreferencesWindow get_default(Application app)
+        {
+            if (s_instance == null)
+                s_instance = new PreferencesWindow(app);
+
+            return s_instance;
         }
     }
 }
