@@ -4,6 +4,7 @@
         <!-- UI files -->
         <file preprocess="xml-stripblanks">window.ui</file>
         <file preprocess="xml-stripblanks">preferences.ui</file>
+        <file preprocess="xml-stripblanks">new-download.ui</file>
         <file preprocess="xml-stripblanks">menus.ui</file>
     </gresource>
 </gresources>
