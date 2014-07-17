@@ -28,7 +28,7 @@ namespace GDownloader
         public Plugins.HosterEngine hoster;
 
         /* Preferences window instance */
-        public Preferences prefs_instance;
+        public PreferencesWindow prefs_window;
 
         public static const ActionEntry[] app_entries = {
             { "preferences",    on_preferences_activated    },
@@ -69,13 +69,13 @@ namespace GDownloader
             }
 
             /* Initialize Pereferences window */
-            prefs_instance = Preferences.get_default(this);
+            prefs_window = PreferencesWindow.get_default(this);
         }
 
         private void on_preferences_activated()
         {
-            prefs_instance.show_all();
-            prefs_instance.present();
+            prefs_window.show_all();
+            prefs_window.present();
         }
 
         private void on_quit_activated()
