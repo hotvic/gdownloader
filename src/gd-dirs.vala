@@ -22,15 +22,15 @@ namespace GDownloader {
 
     class Dirs {
         public static string data_dir {
-            get { return Config.PKGDATADIR; }
+            get { return Config.DATA_DIRECTORY; }
         }
 
-        public static string locale_dir {
+        /*public static string locale_dir {
             get { return Config.LOCALEDIR; }
-        }
+        }*/
 
         public static string lib_dir {
-            get { return Config.PKGLIBDIR; }
+            get { return Config.LIBRARY_DIRECTORY; }
         }
 
         public static string plugins_dir {
@@ -42,7 +42,7 @@ namespace GDownloader {
         }
 
         public static string hoster_plugins_dir {
-            owned get { return Path.build_filename(plugins_dir, "hoster"); }    
+            owned get { return Path.build_filename(plugins_dir, "hoster"); }
         }
 
         public static string hoster_plugins_data_dir {
@@ -62,7 +62,7 @@ namespace GDownloader {
         }
 
         public static string user_hoster_plugins_data_dir {
-            owned get { return Path.build_filename(user_plugins_data_dir, "hoster"); }    
+            owned get { return Path.build_filename(user_plugins_data_dir, "hoster"); }
         }
     }
 }

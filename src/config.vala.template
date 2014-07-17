@@ -1,0 +1,6 @@
+namespace GDownloader.Config
+{
+    public const string VERSION = "%VERSION%";
+    public const string DATA_DIRECTORY = "%DATA_DIRECTORY%";
+    public const string LIBRARY_DIRECTORY = "%LIBRARY_DIRECTORY%";
+}

@@ -1,0 +1,35 @@
+templates.config {
+    files = config.vala
+    variables = %VERSION%=$(project.version)                     \
+                %LIBRARY_DIRECTORY%=$(options.library-directory) \
+                %DATA_DIRECTORY%=$(options.data-directory)
+}
+
+libraries.gdownloader {
+    vala-packages = gtk+-3.0                  \
+                    gobject-introspection-1.0 \
+                    libpeas-1.0               \
+                    libpeas-gtk-1.0           \
+                    gee-0.8
+    packages = gtk+-3.0        \
+               libpeas-1.0     \
+               libpeas-gtk-1.0 \
+               gee-0.8
+    sources = gd-application.vala          \
+              gd-window.vala               \
+              gd-preferences-window.vala   \
+              gd-new-download-dialog.vala  \
+              gd-core-plugin-engine.vala   \
+              gd-hoster-plugin-engine.vala \
+              gd-download-queue.vala       \
+              gd-utils.vala                \
+              gd-dirs.vala                 \
+              config.vala
+    intall = false
+}
+
+programs.gdownloader {
+    sources = gdownloader.vala
+    libraries = gdownloader (local) (static)
+    glib-resource = gdownload.gresouces.xml
+}

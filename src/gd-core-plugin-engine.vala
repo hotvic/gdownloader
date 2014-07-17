@@ -20,8 +20,9 @@
 
 namespace GDownloader.Plugins {
 
-    public class CoreEngine : Peas.Engine {
-        
+    public class CoreEngine : Peas.Engine
+    {
+        /* Default instance */
         public static CoreEngine s_instance;
 
         public CoreEngine()
@@ -43,7 +44,7 @@ namespace GDownloader.Plugins {
 
             foreach (var info in get_plugin_list()) {
                 load_plugin(info);
-            } 
+            }
         }
 
         public new static unowned CoreEngine get_default() {

@@ -1,0 +1,5 @@
+project {
+    name = gdownloader
+    version = 0.1a
+    minimum-bake-version = 0.1.47
+}
